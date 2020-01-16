@@ -12,4 +12,5 @@ docker run -it \
     --env="ROS_IP=$ROS_IP" \
     --env="ROS_MASTER_URI=$ROS_MASTER_URI" \
     --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    --volume="/tmp/:/tmp:rw" \
     frankjoshua/ros-desktop $@
