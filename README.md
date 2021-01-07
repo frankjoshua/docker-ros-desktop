@@ -30,11 +30,12 @@ docker run -it \
 Add this to your .bashrc file:
 
 ```
-export ROS_MASTER_URI=http://<MASTER_IP>:11311
-export ROS_IP=<IP_OF_HOST>
+export ROS_IP=127.0.0.1
+export ROS_MASTER_URI=http://127.0.0.1:11311
 
 alias rr='xhost +;
             docker run -it \
+              --privileged \
               --network="host" \
               --env="DISPLAY" \
               --env="QT_X11_NO_MITSHM=1" \
@@ -48,6 +49,7 @@ alias rosnode='rr rosnode'
 alias rosmsg='rr rosmsg'
 alias rviz='rr rviz'
 alias rqt='rr rqt'
+alias roscore='rr roscore'
 ```
 
 ## Building
